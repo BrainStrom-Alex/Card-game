@@ -61,3 +61,15 @@ def play_game():
                 user_card.append(deal_card())
             else:
                 is_game_over = True
+    while computer_score != 0 and computer_score < 17:
+        computer_card.append(deal_card())
+        computer_score = calculater_score(computer_card)
+
+    print(f"Your final hand: {user_card}, final score: {user_score}")
+    print(f"Computer's final hand: {computer_card}, final score: {computer_score}")
+    print(compare(user_score, computer_score))
+
+
+while input("Do you want to play game of Blackjack? Type 'y' or 'n': ").lower() == "y":
+    print("\n"*50)
+    play_game()
